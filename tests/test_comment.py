@@ -1,6 +1,6 @@
 import pytest
 
-from posts.models import Comment
+from api.models import Comment
 
 
 class TestCommentAPI:

@@ -1,6 +1,6 @@
 import pytest
 
-from posts.models import Follow
+from api.models import Follow
 
 
 class TestFollowAPI:

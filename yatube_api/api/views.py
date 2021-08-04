@@ -3,8 +3,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, permissions, viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.viewsets import GenericViewSet
-from posts.models import Group, Post
 
+from .models import Group, Post
 from .permissions import AuthorOrReadOnly
 from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
                           PostSerializer)
@@ -40,11 +40,11 @@ class CommentViewSet(viewsets.ModelViewSet):
     filterset_fields = ('post', 'author')
 
     def perform_create(self, serializer):
-        get_object_or_404(Post, pk=self.kwargs['post_id'])
+        get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         serializer.save(author=self.request.user)
 
     def get_queryset(self):
-        post = get_object_or_404(Post, pk=self.kwargs['post_id'])
+        post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         return post.comments
 
 

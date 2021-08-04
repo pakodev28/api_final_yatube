@@ -1,6 +1,6 @@
 import pytest
 
-from api.models import Group
+from posts.models import Group
 
 
 class TestGroupAPI:

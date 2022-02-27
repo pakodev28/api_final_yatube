@@ -1,3 +1,6 @@
+![django version](https://img.shields.io/badge/Django-2.2.6-green)
+![python version](https://img.shields.io/badge/Python-3.7%20%7C%203.8%20%7C%203.9-green)
+
 **Учебный проект выполненный в рамках курса "Python-разработчик" от Яндекс.Практикум**
 # Описание сервиса:
 #### API для соц.сети YaTube, позволяет использовать весь функционал сервиса!
